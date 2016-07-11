@@ -57,22 +57,33 @@ element.setAttribute('id', 'react-app');
 document.body.appendChild(element);
 
 suite('Calendar performance', function () {
-    benchmark('without props', function () {
-        ReactDOM.render(<Calendar />, element);
+    benchmark('without props', {
+        fn () {
+            ReactDOM.render(<Calendar />, element);
+        },
+        teardown() {
+           ReactDOM.unmountComponentAtNode(element);
+        }
     });
 
     const props = { value: '22.05.2016' };
-    benchmark('with constant props', function () {
-        ReactDOM.render(<Calendar {...props} />, element);
+    benchmark('with constant props', {
+        fn () {
+            ReactDOM.render(<Calendar {...props} />, element);
+        },
+        teardown() {
+            ReactDOM.unmountComponentAtNode(element);
+        }
     });
 
-    benchmark('with random props', function () {
-        ReactDOM.render(<Calendar value={ Math.random() } />, element);
+    benchmark('with random props', {
+        fn () {
+            ReactDOM.render(<Calendar value={ Math.random() } />, element);
+        },
+         teardown() {
+            ReactDOM.unmountComponentAtNode(element);
+        }
     })
-}, {
-   teardown() {
-       ReactDOM.unmountComponentAtNode(element);
-   }
 });
 ```
 
@@ -89,10 +100,6 @@ suite('app performance', function () {
     benchmark('change code', function () {
         store.dispatch(actions.changeValue());
     });
-}, {
-    teardown() {
-        ReactDOM.unmountComponentAtNode(element);
-    }
 });
 
 ```
