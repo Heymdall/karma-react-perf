@@ -1,0 +1,33 @@
+{
+  "name": "karma-react-perf",
+  "version": "1.0.0",
+  "description": "karma adapter and reporter for testing react components performance",
+  "license": "MIT",
+  "author": {
+    "name": "Alexandr Kitov",
+    "email": "kitov.nn@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/Heymdall/karma-react-perf/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Heymdall/karma-react-perf.git"
+  },
+  "peerDependencies": {
+    "karma": ">=0.10",
+    "react-addons-perf": ">=15.0"
+  },
+  "readmeFilename": "README.md",
+  "dependencies": {
+    "lodash": "^4.13.1"
+  },
+  "keywords": [
+    "benchmark",
+    "benchmark.js",
+    "karma-framework",
+    "karma-plugin",
+    "react",
+    "react-addons-perf"
+  ]
+}
