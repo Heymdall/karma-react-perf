@@ -1,6 +1,6 @@
 {
   "name": "karma-react-perf",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "karma adapter and reporter for testing react components performance",
   "license": "MIT",
   "author": {
